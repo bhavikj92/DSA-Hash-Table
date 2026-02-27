@@ -1,3 +1,5 @@
+package P1_UsernameChecker;
+
 import java.util.*;
 
 public class UsernameService {
@@ -10,12 +12,12 @@ public class UsernameService {
         attemptCount = new HashMap<>();
     }
 
-    // Register a new user
+    // Register new user
     public boolean registerUser(String username, int userId) {
         attemptCount.put(username, attemptCount.getOrDefault(username, 0) + 1);
 
         if (usernameMap.containsKey(username)) {
-            return false; // already taken
+            return false;
         }
 
         usernameMap.put(username, userId);
